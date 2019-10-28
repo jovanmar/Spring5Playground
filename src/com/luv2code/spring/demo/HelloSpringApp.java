@@ -11,7 +11,9 @@ public class HelloSpringApp {
 		//load spring configuration file
 		ClassPathXmlApplicationContext context = 
 				new ClassPathXmlApplicationContext("applicationContext.xml");
-		
+		//some comments to be removed
+		//some more coments to be removed
+		//resolving initial git branches
 		
 		//retrieve bean from spring container
 		Coach theCoach = context.getBean("myCoach", Coach.class);
