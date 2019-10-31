@@ -7,9 +7,13 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+	<!-- load the properties file -->
+	<context:property-placeholder
+		location="classpath:sport.properties" />
+
+
 	<!-- Bean for logging configuration - For more detailed logs, set values 
 		to "FINEST" -->
-
 	<bean id="myLoggerConfig"
 		class="com.luv2code.spring.demo.MyLoggerConfig.MyLoggerConfig"
 		init-method="initLogger">
@@ -18,9 +22,8 @@
 	</bean>
 
 
-
 	<!-- Define your beans here -->
-	
+
 	<bean id="myFortuneService"
 		class="com.luv2code.spring.demo.HappyFortuneService">
 	</bean>
@@ -36,10 +39,10 @@
 
 		<!-- Set up setter injection -->
 		<property name="fortuneService" ref="myFortuneService" />
-		
+
 		<!-- injecting literal values -->
-		<property name="emailAddress" value="bestCoach@luv2code.com" />
-		<property name="team" value="Sunrisers Hyderabad" />
+		<property name="emailAddress" value="${foo.email}" />
+		<property name="team" value="${foo.team}" />
 
 	</bean>
 

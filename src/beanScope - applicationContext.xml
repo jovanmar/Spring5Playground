@@ -7,9 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- load the properties file -->
-	<context:property-placeholder
-		location="classpath:sport.properties" />
+
 
 
 	<!-- Bean for logging configuration - For more detailed logs, set values 
@@ -29,22 +27,12 @@
 	</bean>
 
 
-	<bean id="myCoach" class="com.luv2code.spring.demo.TrackCoach">
+	<bean id="myCoach" class="com.luv2code.spring.demo.TrackCoach"
+		scope="prototype">
 		<!-- set up constructor injection- -->
 		<constructor-arg ref="myFortuneService" />
 	</bean>
 
-	<bean id="myCricketCoach"
-		class="com.luv2code.spring.demo.CricketCoach">
-
-		<!-- Set up setter injection -->
-		<property name="fortuneService" ref="myFortuneService" />
-
-		<!-- injecting literal values -->
-		<property name="emailAddress" value="${foo.email}" />
-		<property name="team" value="${foo.team}" />
-
-	</bean>
 
 </beans>
 
