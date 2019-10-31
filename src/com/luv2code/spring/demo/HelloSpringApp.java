@@ -1,5 +1,8 @@
 package com.luv2code.spring.demo;
 
+
+import javax.swing.plaf.synth.SynthSeparatorUI;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class HelloSpringApp {
@@ -14,13 +17,17 @@ public class HelloSpringApp {
 		
 		
 		//retrieve bean from spring container
-		Coach theCoach = context.getBean("myCricketCoach", Coach.class);
+//		Coach theCoach = context.getBean("myCoach", Coach.class);
+		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
 		
 		//call methods on the bean
 		System.out.println(theCoach.getDailyWorkout());
 		
-//		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theCoach.getDailyFortune());
 		
+		//some new methods to test setters for email and team
+		System.out.println(theCoach.getEmailAddress());
+		System.out.println(theCoach.getTeam());
 		
 		//close the context
 		
