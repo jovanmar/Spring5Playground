@@ -31,7 +31,7 @@ public class TrackCoach implements Coach {
 	
 	//add and destroy method  
 	public void doMyCleanupStuff () {
-		System.out.println("TrackCoach : Spring entered init metod doMyCleanupStuff ");
+		System.out.println("TrackCoach : Spring entered destory metod doMyCleanupStuff ");
 	}
 
 }
